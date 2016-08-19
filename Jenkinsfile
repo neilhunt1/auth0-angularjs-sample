@@ -17,11 +17,9 @@ node("master"){
 }
 
 stage "Deploy to DEV Bucket"
-if (env.BRANCH_NAME=="staging") {
 	node("master"){
 		dir("staging"){
 			unstash 'webapp'
 			sh "aws s3 sync . s3://dhsflash-auth"
 		}
 	}
-}
