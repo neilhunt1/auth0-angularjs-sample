@@ -4,8 +4,6 @@ node("master"){
 	stage 'clean, checkout and package install'
 	sh "rm -rf *"
 	checkout scm
-	sh "npm --version"
-    sh 'npm install'
     sh 'bower install'
 
 	stage "Build"
