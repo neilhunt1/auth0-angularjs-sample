@@ -4,10 +4,12 @@ node("master"){
 	stage 'clean, checkout and package install'
 	sh "rm -rf *"
 	checkout scm
-    sh 'bower install'
 
 	stage "Build"
+	sh "ls -lh"
 	dir("00-Starter-Seed"){
+		sh "ls -lh"
+		sh 'bower install'
 		sh "grunt build"
 	}
 	dir("00-Starter-Seed/dist"){
