@@ -10,7 +10,6 @@ node("master"){
 	dir("00-Starter-Seed"){
 		sh "ls -lh"
 		sh 'bower install'
-		sh "grunt build"
 	}
 	dir("00-Starter-Seed/dist"){
 		sh 'ls -la'
